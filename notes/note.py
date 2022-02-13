@@ -20,3 +20,21 @@ class Note:
         database.commit()
 
         return [cursor.rowcount, self]
+
+    def readByUserId(self):
+        sql = f"SELECT * FROM notes WHERE user_id = {self.user_id}"
+
+        cursor.execute(sql);
+        result = cursor.fetchall();
+
+        return result
+
+    def remove(self):
+        sql = f"DELETE  FROM notes WHERE user_id = {self.user_id} AND title LIKE '%{self.title}%'"
+
+        cursor.execute(sql);
+        database.commit();
+
+        return [cursor.rowcount, self]
+
+

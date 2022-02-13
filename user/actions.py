@@ -54,11 +54,11 @@ class Actions:
             self.other_actions(user);
 
         elif action == "show":
-            print(f"show")
+            toDo.show(user)
             self.other_actions(user);
 
         elif action == "remove":
-            print(f"remove")
+            toDo.remove(user)
             self.other_actions(user);
 
         elif action == "exit":
